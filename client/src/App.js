@@ -4,7 +4,7 @@ import { app } from "./config/firebases.config";
 import { getAuth } from "firebase/auth";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Home, Login } from "./components";
+import { Home, Login, Dashboard } from "./components";
 import { validateUser } from "./api";
 import { useStateValue } from "./context/StateProvider";
 import {actionType} from "./context/reducer";
@@ -56,6 +56,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login setAuth={setAuth} />} />
         <Route path="/*" element={<Home />} />
+        <Route path="/dashboard/home" element={<Dashboard />} />
       </Routes>
     </div>
   );

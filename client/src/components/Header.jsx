@@ -114,6 +114,18 @@ const Header = () => {
               My Favourites
             </p>
             <hr />
+
+            {user?.user?.role === "admin" && (
+              <>
+                <NavLink to={"/dashboard/home"}>
+                  <p className="text-textcolor text-base transition-all duration-150 ease-in-out hover:font-semibold">
+                    Dashboard
+                  </p>
+                </NavLink>
+                <hr />
+              </>
+            )}
+
             <p
               className="text-textcolor text-base transition-all duration-150 ease-in-out hover:font-semibold"
               onClick={logOut}
