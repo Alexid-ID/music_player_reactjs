@@ -5,10 +5,17 @@ import { getAuth } from "firebase/auth";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Home, Login } from "./components";
+import { validateUser } from "./api";
+import { useStateValue } from "./context/StateProvider";
+import {actionType} from "./context/reducer";
 
 function App() {
   const firebaseAuth = getAuth(app);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
+
+  const [{user} , dispatch] = useStateValue();
+  console.log("User: ", user);
+  
 
   const [authState, setauthState] = useState(false);
 
@@ -27,6 +34,14 @@ function App() {
       if (userCred) {
 		userCred.getIdToken().then((token) => {
 			console.log(token);
+            validateUser(token).then((data) => {
+                dispatch({
+                    type: actionType.SET_USER,
+                    user: data,
+                });
+                setAuth(true);
+                
+            });
 		});
       } else {
 		setAuth(false);
@@ -37,7 +52,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-blue-400">
+    <div className="">
       <Routes>
         <Route path="/login" element={<Login setAuth={setAuth} />} />
         <Route path="/*" element={<Home />} />

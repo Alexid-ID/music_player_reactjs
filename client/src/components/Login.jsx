@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { app } from "../config/firebases.config";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { replace, useNavigate } from "react-router-dom";
+import {LoginBg} from '../assets/video'
 
 // console.log(app);
 
@@ -50,6 +51,14 @@ const Login = ({setAuth}) => {
 
   return (
     <div className="relative h-screen w-screen">
+        <video 
+            src={LoginBg}
+            type="vide/mp4"
+            autoPlay
+            muted
+            loop
+            className="w-full h-full object-cover"
+         />
       <div className="absolute inset-0 flex items-center justify-center bg-darkOverlay p-4">
         <div className="flex w-full flex-col items-center justify-center rounded-md bg-lightOverlay p-4 shadow-2xl backdrop-blur-md md:w-375">
           <div
