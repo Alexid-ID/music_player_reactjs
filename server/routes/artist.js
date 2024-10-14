@@ -14,7 +14,7 @@ router.post("/save", async (req, res) => {
 
 	try {
 		const savedArtist = await newArtist.save();
-		return res.status(200).json({ success: true, artist: savedArtist });
+		return res.status(200).json({ success: true, data: savedArtist });
 	} catch (error) {
 		return res.status(400).json({ success: false, error: error });
 	}
@@ -30,7 +30,7 @@ router.get("/getOne/:id", async (req, res) => {
 	const data = await artist.findOne(filter);
 
 	if (data) {
-		return res.status(200).send({ success: true, artist: data });
+		return res.status(200).send({ success: true, data: data });
 	} else {
 		return res.status(400).send({ success: false, message: "Artist not found" });
 	}
@@ -46,7 +46,7 @@ router.get("/getAll", async (req, res) => {
 	const data = await artist.find({}, {}, options);
 
 	if (data) {
-		return res.status(200).send({ success: true, artists: data });
+		return res.status(200).send({ success: true, data: data });
 	} else {
 		return res.status(400).send({ success: false, message: "No artists found" });
 	}
