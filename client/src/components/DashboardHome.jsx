@@ -16,8 +16,6 @@ import { bgcolors } from "../utils/styles";
 export const DashBoardCard = ({ icon, name, count }) => {
     const bg_Color = bgcolors[parseInt(Math.random() * bgcolors.length)];
 
-    
-
     return (
     <div 
         style={{backgroundColor: bg_Color}}
@@ -36,7 +34,6 @@ const DashboardHome = () => {
   useEffect(() => {
     if (!allUsers) {
       getAllUsers().then((data) => {
-        // console.log("All Users: ", data);
         dispatch({
           type: "SET_ALL_USERS",
           allUsers: data.data,
@@ -46,7 +43,6 @@ const DashboardHome = () => {
 
     if (!allArtists) {
       getAllArtists().then((data) => {
-        console.log("All artists: ", data);
         dispatch({
           type: "SET_ALL_ARTISTS",
           allArtists: data.data,
@@ -56,7 +52,6 @@ const DashboardHome = () => {
 
     if (!allAlbums) {
       getAllAlbums().then((data) => {
-        console.log("All albums: ", data);
         dispatch({
           type: "SET_ALL_ALBUMS",
           allAlbums: data.data,
@@ -66,7 +61,6 @@ const DashboardHome = () => {
 
     if (!allSongs) {
       getAllSongs().then((data) => {
-        console.log("All songs: ", data);
         dispatch({
           type: "SET_ALL_SONGS",
           allSongs: data.data,

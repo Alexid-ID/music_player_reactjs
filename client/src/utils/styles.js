@@ -9,6 +9,12 @@ export const bgcolors = [
     "#FFE2E6",
     "#E2FFE9",
     "#E2F4FF",
-    "#FFFFF2"
-
+    "#FFFFF2",
+    "#F2FFFF",
+    "#FFF2FF",
+    "#F2FFFE",
+    "#F2FFFC",
+    "#F2FFFA",
+    "#F2FFF8",
+    "#F2FFF6",
 ]

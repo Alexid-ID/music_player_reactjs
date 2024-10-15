@@ -10,7 +10,7 @@ import {
     DashboardArtist, 
     DashboardAlbum, 
     DashboardNewSong 
-} from "./";
+} from ".";
 import { Routes, Route } from "react-router-dom";
 
 const Dashboard = () => {
@@ -64,9 +64,9 @@ const Dashboard = () => {
         <Routes>
           <Route path="/home" element={<DashboardHome />} />
           <Route path="/user" element={<DashboardUser />} />
-          <Route path="/songs" element={<DashboardSongs />} />
+          <Route path="/song" element={<DashboardSongs />} />
           <Route path="/artist" element={<DashboardArtist />} />
-          <Route path="/albums" element={<DashboardAlbum />} />
+          <Route path="/album" element={<DashboardAlbum />} />
           <Route path="/newSong" element={<DashboardNewSong />} />
         </Routes>
       </div>

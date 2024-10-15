@@ -70,8 +70,9 @@ const updateUserData = async (decodeValue, req, res) => {
 
 router.get("/getAll", async (req, res) => {
 	const options = {
+		// sort descending
 		sort: {
-			createdAt: 1,
+			createdAt: -1,
 		},
 	};
 
@@ -102,15 +103,15 @@ router.put("/updateRole/:userId", async (req, res) => {
 });
 
 router.delete("/delete/:userId", async (req, res) => {
-    const filter = { _id: req.params.userId };
+	const filter = { _id: req.params.userId };
 
-    const result = await user.deleteOne(filter);
+	const result = await user.deleteOne(filter);
 
-    if(result.deletedCount === 1) {
-        res.status(200).send({ success: true, msg: "User deleted successfully" });
-    } else {
-        res.status(400).send({ success: false, msg: "User Not Found" });
-    }
+	if (result.deletedCount === 1) {
+		res.status(200).send({ success: true, msg: "User deleted successfully" });
+	} else {
+		res.status(400).send({ success: false, msg: "User Not Found" });
+	}
 });
 
 module.exports = router;
