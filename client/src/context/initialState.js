@@ -1,13 +1,14 @@
-import { lang } from "moment";
-
 export const initialState = {
-    user: null,
-    allUsers: null, 
-    allSongs: null,
-    allArtists: null,
-    allAlbums: null,
-    filterTerm: "all", 
-    artistFilter: null, 
-    albumFilter: null,
-    languageFilter: null,
-}
+  user: null,
+  allUsers: null,
+  allSongs: null,
+  allArtists: null,
+  allAlbums: null,
+  filterTerm: "all",
+  artistFilter: null,
+  albumFilter: null,
+  languageFilter: null,
+  alertType: null,
+  isSongPlaying: false,
+  songIndex: 0,
+};

@@ -81,3 +81,53 @@ export const saveNewSong = async (data) => {
     return null;
   }
 };
+
+// Artists
+export const saveNewArtist = async (data) => {
+  try {
+    const res = await axios.post(`${baseUrl}api/artists/save`, { ...data });
+    return res.data;
+  } catch (error) {
+    return null;
+  }
+};
+
+// Album 
+export const saveNewAlbum = async (data) => {
+  try {
+    const res = await axios.post(`${baseUrl}api/albums/save`, { ...data });
+    return res.data;
+  } catch (error) {
+    return null;
+  }
+};
+
+// delete song
+export const deleteSong = async (id) => {
+  try {
+    const res = await axios.delete(`${baseUrl}api/songs/delete/${id}`);
+    return res;
+  } catch (error) {
+    return null;
+  }
+};
+
+// delete artist
+export const deleteArtist = async (id) => {
+  try {
+    const res = await axios.delete(`${baseUrl}api/artists/delete/${id}`);
+    return res;
+  } catch (error) {
+    return null;
+  }
+};
+
+// delete album
+export const deleteAlbum = async (id) => {
+  try {
+    const res = await axios.delete(`${baseUrl}api/albums/delete/${id}`);
+    return res;
+  } catch (error) {
+    return null;
+  }
+};

@@ -3,17 +3,21 @@ import Header from "./Header";
 import { NavLink } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { isActiveStyles, isNotActiveStyles } from "../utils/styles";
+import { useStateValue } from "../context/StateProvider";
 import { 
     DashboardHome, 
     DashboardSongs, 
     DashboardUser, 
     DashboardArtist, 
     DashboardAlbum, 
-    DashboardNewSong 
+    DashboardNewSong,
+    Alert
 } from ".";
 import { Routes, Route } from "react-router-dom";
 
 const Dashboard = () => {
+    const [{alertType}, dispatch] = useStateValue();
+
   return (
     <div className="flex h-auto w-full flex-col items-center justify-center bg-primary">
       <Header />
@@ -70,6 +74,8 @@ const Dashboard = () => {
           <Route path="/newSong" element={<DashboardNewSong />} />
         </Routes>
       </div>
+
+
     </div>
   );
 };

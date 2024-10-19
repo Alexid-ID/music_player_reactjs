@@ -9,10 +9,15 @@ const actionType = {
   SET_FILTER_LANGUAGE: "SET_FILTER_LANGUAGE",
   SET_FILTER_ARTIST: "SET_FILTER_ARTIST",
   SET_FILTER_ALBUM: "SET_FILTER_ALBUM",
+  SET_ALERT_TYPE: "SET_ALERT_TYPE",
+
+  //   song playing
+  SET_IS_SONG_PLAYING: "SET_IS_SONG_PLAYING",
+  SET_SONG_INDEX: "SET_SONG_INDEX",
 };
 
 const reducer = (state, action) => {
-    console.log("Action: ", action);
+  console.log("Action: ", action);
 
   switch (action.type) {
     case actionType.SET_USER:
@@ -44,7 +49,7 @@ const reducer = (state, action) => {
         allSongs: action.allSongs,
       };
 
-    //   Fitler cases 
+    //   Fitler cases
     case actionType.SET_FILTER_TERM:
       return {
         ...state,
@@ -52,22 +57,42 @@ const reducer = (state, action) => {
       };
 
     case actionType.SET_FILTER_LANGUAGE:
-        return {
-            ...state,
-            languageFilter: action.languageFilter,
-        };
+      return {
+        ...state,
+        languageFilter: action.languageFilter,
+      };
 
     case actionType.SET_FILTER_ARTIST:
-        return {
-            ...state,
-            artistFilter: action.artistFilter,
-        };
+      return {
+        ...state,
+        artistFilter: action.artistFilter,
+      };
 
     case actionType.SET_FILTER_ALBUM:
-        return {
-            ...state,
-            albumFilter: action.albumFilter,
-        };
+      return {
+        ...state,
+        albumFilter: action.albumFilter,
+      };
+
+    // Alert cases
+    case actionType.SET_ALERT_TYPE:
+      return {
+        ...state,
+        alertType: action.alertType,
+      };
+
+    //   Song playing cases
+    case actionType.SET_IS_SONG_PLAYING:
+      return {
+        ...state,
+        isSongPlaying: action.isSongPlaying,
+      };
+
+    case actionType.SET_SONG_INDEX:
+      return {
+        ...state,
+        songIndex: action.songIndex,
+      };
 
     default:
       return state;
