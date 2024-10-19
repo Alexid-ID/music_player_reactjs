@@ -22,8 +22,11 @@ yarn start
 ```
 ### Database Setup
 MongoDB
+
     * Create a database in MongoDB
+    
     * user: minhthuw - minhthuw, admin - admin
+    
 
     * Network access: allow access from anywhere
 Firebase
